@@ -1,0 +1,11 @@
+library(e1071)
+head(iris,5)
+attach(iris)
+x<-subset(iris,select = -Species)
+y<-Species
+s<-svm(x,y)
+p<-predict(s,x)
+system.time(predict(s,x))
+table(p,y)
+plot(table(p,y)
+)
